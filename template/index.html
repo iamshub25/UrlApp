@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Shorten URL</button>
+        {% if request.user.is_superuser %}
+        <h4 align="center"><a href="/">All urls</a></h4>
+        {% endif %}
+    </form>
+</body>
+</html>

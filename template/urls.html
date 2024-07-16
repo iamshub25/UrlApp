@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">All urls</h1>
+    <table align="center" border="1px">
+        <form method="POST">
+            <tr>
+                <th>orginal URl</th>
+                <th>short URl</th>
+                <th>Count</th>
+            </tr>
+            {% for x in data %}
+            <tr>
+                <td>{{ x.original_url  }}</td>
+                <!--<td> {{request.build_absolute_uri }}{{ x.short_code }}</td>-->
+                <td><a href="{{ request.build_absolute_uri }}{{ x.short_code }}">{{ request.build_absolute_uri }}{{ x.short_code }}</a></td>
+                <td>{{ x.click_count }}</td>
+
+            </tr>
+            {% endfor %}
+        </form>
+    </table>
+    <h3 align="center"><a href="/index">index</a></h3>
+</body>
+</html>

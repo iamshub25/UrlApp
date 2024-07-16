@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortened</title>
+</head>
+<body>
+    <h1>URL Shortened</h1>
+    <p>Your shortened URL is: <a href="/{{ short_code }}/">{{ request.build_absolute_uri }}{{ short_code }}</a></p>
+    <p>Original URL: {{ short_url.original_url }}</p>
+    <p>Clicks: {{ short_url.click_count }}</p>
+</body>
+</html>
